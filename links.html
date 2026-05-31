@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iMoney Partner — ที่ปรึกษาการเงินอิสระ</title>
+  <meta name="description" content="iMoney Partner — ที่ปรึกษาการเงินอิสระ วางแผนการเงิน เกษียณ ลดหย่อนภาษี ประกันชีวิต" />
+
+  <!-- Fonts: Prompt (TH) + Poppins (EN) — iMoney Partner brand standard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── iMoney Partner Brand Tokens ─── */
+    :root {
+      --purple:         #9253A1;
+      --purple-mid:     #744280;
+      --purple-dark:    #3A2140;
+      --purple-deeper:  #26102E;
+      --purple-light:   #C8A4D0;
+      --purple-soft:    #E9DCEC;
+      --gold:           #C9A84C;
+      --gold-deep:      #B8963E;
+      --gold-soft:      #E8D5A3;
+      --gold-pale:      #FDF6E3;
+      --text-on-dark:   #F5ECD7;
+      --text-dim:       rgba(245,236,215,0.55);
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: 'Prompt', sans-serif;
+      background: var(--purple-deeper);
+      color: var(--text-on-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── Background layers + Subtle Grid texture ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.10)  0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(146,83,161,0.30)  0%, transparent 55%),
+        linear-gradient(160deg, #26102E 0%, #3A2140 50%, #26102E 100%);
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M24 0 L0 0 0 24' fill='none' stroke='%239253A1' stroke-width='0.5' opacity='0.35'/%3E%3C/svg%3E");
+      background-size: 24px 24px;
+    }
+
+    /* ─── Floating gold glow ─── */
+    .glow {
+      position: fixed; border-radius: 50%;
+      filter: blur(100px); opacity: 0.12; z-index: 0; pointer-events: none;
+      animation: floatY 10s ease-in-out infinite;
+    }
+    .glow-1 { width: 260px; height: 260px; background: var(--gold); top: 5%; right: -60px; animation-delay: 0s; }
+    .glow-2 { width: 180px; height: 180px; background: var(--purple); bottom: 15%; left: -40px; animation-delay: 4s; }
+
+    @keyframes floatY {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-24px); }
+    }
+
+    /* ─── Main container ─── */
+    .container {
+      position: relative; z-index: 1;
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 52px 20px 64px;
+      display: flex; flex-direction: column; align-items: center;
+    }
+
+    /* ─── Gold top line ─── */
+    .gold-line {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--gold-deep), var(--gold-soft));
+      border-radius: 2px;
+      margin-bottom: 28px;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    /* ─── Profile ─── */
+    .profile {
+      text-align: center; margin-bottom: 32px;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .logo-ring {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple-deeper));
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    /* gold ring via pseudo */
+    .logo-ring::before {
+      content: '';
+      position: absolute; inset: -2px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep), var(--gold-soft), var(--gold-deep));
+      z-index: -1;
+      animation: ringRotate 6s linear infinite;
+    }
+    @keyframes ringRotate {
+      to { filter: hue-rotate(15deg) brightness(1.1); }
+    }
+    .logo-ring img {
+      width: 78px; height: 78px; object-fit: contain; border-radius: 0;
+      position: relative; z-index: 1;
+    }
+    /* Shimmer sweep animation */
+    .logo-ring::after {
+      content: '';
+      position: absolute; inset: 0; border-radius: 50%;
+      background: linear-gradient(115deg,
+        transparent 25%,
+        rgba(255,230,120,0.55) 50%,
+        transparent 75%);
+      background-size: 300% 100%;
+      animation: goldSweep 3s ease-in-out infinite;
+      z-index: 2;
+      pointer-events: none;
+    }
+    @keyframes goldSweep {
+      0%   { background-position: 200% center; opacity: 0; }
+      30%  { opacity: 1; }
+      60%  { background-position: -100% center; opacity: 1; }
+      100% { background-position: -100% center; opacity: 0; }
+    }
+    .logo-ring .logo-fallback {
+      font-family: 'Poppins', sans-serif;
+      font-size: 26px; font-weight: 800;
+      color: var(--gold-soft);
+    }
+
+    .profile-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px; font-weight: 800; letter-spacing: 0.3px;
+      background: linear-gradient(135deg, var(--gold-soft) 30%, var(--gold) 70%, var(--gold-soft));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 7px;
+    }
+    .profile-sub {
+      font-size: 13px; font-weight: 400;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+
+    .badges {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      justify-content: center; margin-top: 12px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 11px; border-radius: 20px;
+      font-size: 11px; font-weight: 500;
+    }
+    .badge-gold {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold-soft);
+    }
+    .badge-purple {
+      background: rgba(146,83,161,0.15);
+      border: 1px solid rgba(200,164,208,0.35);
+      color: var(--purple-light);
+    }
+
+    /* ─── Gold divider ─── */
+    .gold-divider {
+      width: 100%; display: flex; align-items: center; gap: 12px;
+      margin: 4px 0 22px;
+    }
+    .gold-divider::before, .gold-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.35), transparent);
+    }
+    .gold-divider span {
+      font-size: 10.5px; font-weight: 500;
+      color: rgba(201,168,76,0.55);
+      letter-spacing: 1px; text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ─── Primary CTA ─── */
+    .cta-primary {
+      display: flex; align-items: center; gap: 12px;
+      width: 100%; padding: 17px 20px;
+      background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 50%, var(--gold-soft) 100%);
+      border: none; border-radius: 16px;
+      color: var(--purple-darker, #2A1530);
+      font-family: 'Prompt', sans-serif;
+      font-size: 15px; font-weight: 700;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 28px rgba(201,168,76,0.35), 0 0 0 0 rgba(201,168,76,0.3);
+      animation: pulseCTA 3s ease-in-out infinite, fadeUp 0.7s 0.2s ease both;
+      margin-bottom: 12px;
+      position: relative; overflow: hidden;
+    }
+    .cta-primary::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .cta-primary:hover::after { opacity: 1; }
+    .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(201,168,76,0.45); }
+    .cta-primary:active { transform: translateY(0); }
+
+    .cta-icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: rgba(38,16,46,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .cta-text { flex: 1; }
+    .cta-text-main { display: block; font-size: 15px; font-weight: 700; color: #26102E; }
+    .cta-text-sub  { display: block; font-size: 11px; font-weight: 400; color: rgba(38,16,46,0.65); margin-top: 1px; }
+    .cta-arrow { color: rgba(38,16,46,0.5); font-size: 13px; flex-shrink: 0; }
+
+    @keyframes pulseCTA {
+      0%,100% { box-shadow: 0 6px 28px rgba(201,168,76,0.35), 0 0 0 0 rgba(201,168,76,0.3); }
+      50%      { box-shadow: 0 6px 28px rgba(201,168,76,0.35), 0 0 0 10px rgba(201,168,76,0); }
+    }
+
+    /* ─── Service tags ─── */
+    .service-tags {
+      display: flex; flex-wrap: wrap; gap: 7px;
+      justify-content: center;
+      margin-bottom: 22px;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+    .service-tag {
+      padding: 5px 13px; border-radius: 20px;
+      font-size: 11.5px; font-weight: 500;
+      background: rgba(146,83,161,0.15);
+      border: 1px solid rgba(200,164,208,0.25);
+      color: var(--purple-light);
+      transition: all 0.2s;
+    }
+    .service-tag:hover {
+      background: rgba(146,83,161,0.25);
+      border-color: rgba(200,164,208,0.45);
+    }
+
+    /* ─── Social link buttons ─── */
+    .links { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+
+    .link-btn {
+      display: flex; align-items: center; gap: 14px;
+      width: 100%; padding: 14px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px;
+      color: var(--text-on-dark);
+      font-family: 'Prompt', sans-serif;
+      font-size: 14.5px; font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      animation: fadeUp 0.6s ease both;
+    }
+    .link-btn:hover {
+      background: rgba(201,168,76,0.07);
+      border-color: rgba(201,168,76,0.3);
+      transform: translateX(5px);
+    }
+    .link-btn:active { transform: translateX(2px); }
+
+    .link-icon {
+      width: 40px; height: 40px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; flex-shrink: 0;
+    }
+    .link-label { flex: 1; }
+    .link-label-main { display: block; font-size: 14px; font-weight: 600; }
+    .link-label-sub  { display: block; font-size: 11px; font-weight: 400; color: var(--text-dim); margin-top: 1px; }
+    .link-arrow { color: rgba(201,168,76,0.4); font-size: 11px; flex-shrink: 0; transition: transform 0.2s, color 0.2s; }
+    .link-btn:hover .link-arrow { color: rgba(201,168,76,0.8); transform: translateX(3px); }
+
+    /* Platform icon colors */
+    .ic-facebook  { background: rgba(24,119,242,0.15);  color: #60a5fa; }
+    .ic-instagram { background: rgba(225,48,108,0.15);  color: #f472b6; }
+    .ic-tiktok    { background: rgba(255,255,255,0.08); color: #e2e8f0; }
+    .ic-linkedin  { background: rgba(0,119,181,0.18);   color: #60a5fa; }
+    .ic-line      { background: rgba(0,185,0,0.15);     color: #4ade80; }
+    .ic-web       { background: rgba(146,83,161,0.2);   color: var(--purple-light); }
+    .ic-career    { background: rgba(201,168,76,0.18);  color: var(--gold-soft); }
+
+    /* Career button — gold border accent */
+    .link-career {
+      border-color: rgba(201,168,76,0.3);
+      background: rgba(201,168,76,0.06);
+    }
+    .link-career:hover {
+      background: rgba(201,168,76,0.12);
+      border-color: rgba(201,168,76,0.5);
+    }
+    .link-career .link-label-main { color: var(--gold-soft); }
+
+    /* Animation stagger */
+    .link-btn:nth-child(1) { animation-delay: 0.35s; }
+    .link-btn:nth-child(2) { animation-delay: 0.42s; }
+    .link-btn:nth-child(3) { animation-delay: 0.49s; }
+    .link-btn:nth-child(4) { animation-delay: 0.56s; }
+    .link-btn:nth-child(5) { animation-delay: 0.63s; }
+    .link-btn:nth-child(6) { animation-delay: 0.70s; }
+
+    /* ─── Footer ─── */
+    .footer {
+      margin-top: 40px; text-align: center;
+      animation: fadeUp 0.7s 0.85s ease both;
+    }
+    .footer-logo { height: 28px; opacity: 0.55; margin-bottom: 10px; }
+    .footer p { font-size: 11px; color: rgba(245,236,215,0.28); line-height: 1.7; }
+    .footer a { color: rgba(201,168,76,0.45); text-decoration: none; }
+    .footer a:hover { color: rgba(201,168,76,0.7); }
+
+    /* ─── Keyframes ─── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient glows -->
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <div class="container">
+
+    <!-- Gold accent line -->
+    <div class="gold-line"></div>
+
+    <!-- Profile -->
+    <div class="profile">
+      <div class="logo-ring">
+        <img src="./im-mark-white.png" alt="iMoney Partner iM Logo" />
+        <span class="logo-fallback" style="display:none;">iM</span>
+      </div>
+
+      <div class="profile-name">iMoney Partner</div>
+      <div class="profile-sub">
+        ที่ปรึกษาการเงินอิสระ | วางแผนการเงินครบวงจร<br/>
+        โดย CFA Charterholder — MDRT 2021–2026
+      </div>
+
+      <div class="badges">
+        <span class="badge badge-gold"><i class="fas fa-shield-halved"></i> CFA Charterholder</span>
+        <span class="badge badge-gold"><i class="fas fa-star"></i> MDRT 2021–2025</span>
+        <span class="badge badge-purple"><i class="fas fa-users"></i> 500+ Cases</span>
+        <span class="badge badge-purple"><i class="fas fa-chart-line"></i> AUM 500M THB+</span>
+      </div>
+    </div>
+
+    <!-- Primary CTA -->
+    <a href="https://imoneypartnerth-gif.github.io/financial-planning-by-phak-kanokwan/" target="_blank" class="cta-primary">
+      <span class="cta-icon">📋</span>
+      <span class="cta-text">
+        <span class="cta-text-main">ลงทะเบียนวางแผนการเงินฟรี</span>
+        <span class="cta-text-sub">นัดปรึกษากับที่ปรึกษาการเงินมืออาชีพ — ไม่มีค่าใช้จ่าย</span>
+      </span>
+      <i class="fas fa-chevron-right cta-arrow"></i>
+    </a>
+
+    <!-- Service chips -->
+    <div class="service-tags">
+      <span class="service-tag">🏦 Retirement</span>
+      <span class="service-tag">📊 Financial Plan</span>
+      <span class="service-tag">🧾 Tax Planning</span>
+      <span class="service-tag">🛡️ Insurance</span>
+      <span class="service-tag">📈 Mutual Funds</span>
+      <span class="service-tag">💼 Wealth &amp; Legacy</span>
+    </div>
+
+    <!-- Divider -->
+    <div class="gold-divider"><span>ช่องทางติดตาม</span></div>
+
+    <!-- Social Links -->
+    <div class="links">
+
+      <a href="https://www.facebook.com/imoneypartner" target="_blank" class="link-btn">
+        <span class="link-icon ic-facebook"><i class="fab fa-facebook-f"></i></span>
+        <span class="link-label">
+          <span class="link-label-main">Facebook</span>
+          <span class="link-label-sub">facebook.com/imoneypartner</span>
+        </span>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+
+      <a href="https://www.instagram.com/imoneypartner" target="_blank" class="link-btn">
+        <span class="link-icon ic-instagram"><i class="fab fa-instagram"></i></span>
+        <span class="link-label">
+          <span class="link-label-main">Instagram</span>
+          <span class="link-label-sub">@imoneypartner</span>
+        </span>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+
+      <a href="https://www.tiktok.com/@imoney.partner" target="_blank" class="link-btn">
+        <span class="link-icon ic-tiktok"><i class="fab fa-tiktok"></i></span>
+        <span class="link-label">
+          <span class="link-label-main">TikTok</span>
+          <span class="link-label-sub">@imoney.partner</span>
+        </span>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/company/imoneypartner" target="_blank" class="link-btn">
+        <span class="link-icon ic-linkedin"><i class="fab fa-linkedin-in"></i></span>
+        <span class="link-label">
+          <span class="link-label-main">LinkedIn</span>
+          <span class="link-label-sub">iMoney Partner</span>
+        </span>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+
+      <a href="https://line.me/R/ti/p/@283emahl" target="_blank" class="link-btn">
+        <span class="link-icon ic-line"><i class="fab fa-line"></i></span>
+        <span class="link-label">
+          <span class="link-label-main">LINE Official Account</span>
+          <span class="link-label-sub">@imoneypartner</span>
+        </span>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+
+      <a href="https://imoneypartner.com" target="_blank" class="link-btn">
+        <span class="link-icon ic-web"><i class="fas fa-globe"></i></span>
+        <span class="link-label">
+          <span class="link-label-main">Website</span>
+          <span class="link-label-sub">www.imoneypartner.com</span>
+        </span>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+
+    </div>
+
+    <!-- Career Divider -->
+    <div class="gold-divider" style="margin-top:22px;"><span>ร่วมงานกับเรา</span></div>
+
+    <!-- Career CTA -->
+    <a href="https://imoneypartner.com/career/" target="_blank" class="link-btn link-career">
+      <span class="link-icon ic-career"><i class="fas fa-briefcase"></i></span>
+      <span class="link-label">
+        <span class="link-label-main">สมัคร Wealth Advisor</span>
+        <span class="link-label-sub">เป็นที่ปรึกษาการเงินอิสระกับ iMoney Partner</span>
+      </span>
+      <i class="fas fa-chevron-right link-arrow"></i>
+    </a>
+
+    <!-- Footer -->
+    <div class="footer">
+      <img
+        src="https://imoneypartner.com/wp-content/uploads/2023/09/Group-16.png"
+        class="footer-logo" alt="iMoney Partner" />
+      <p>© 2026 บริษัท ไอมันนี่พาร์ทเนอร์ จำกัด<br/>
+        <a href="https://imoneypartner.com">www.imoneypartner.com</a> · 064-246-9623
+      </p>
+
+    </div>
+
+  </div>
+</body>
+</html>
