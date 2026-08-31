@@ -1472,14 +1472,14 @@
   // ── ติดตามคลิกปุ่ม LINE เป็น conversion ──
   // แนะนำ: สร้าง conversion action "LINE click" ใหม่ใน Google Ads แล้วแทนค่า LINE_CONV ด้านล่าง (เพื่อแยกรายงาน LINE กับ form)
   var LINE_CONV = 'AW-11371234695/wQOOCI6Gjb4cEIeLna4q';
-  var lineBtn = document.querySelector('.line-btn');
-  if (lineBtn) {
-    lineBtn.addEventListener('click', function() {
+    // นับทุกลิงก์ที่พาไป LINE (ปุ่มหลัก + ไอคอนใน footer) ไม่ใช่แค่ปุ่มแรก
+  document.querySelectorAll('a[href*="line.me"]').forEach(function(el) {
+    el.addEventListener('click', function() {
       if (typeof gtag !== 'undefined') {
         gtag('event', 'conversion', { 'send_to': LINE_CONV, 'value': 500, 'currency': 'THB' });
       }
     });
-  }
+  });
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
