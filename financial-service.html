@@ -1488,6 +1488,58 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+  // ── สลับหัวข้อหน้าเว็บตามธีมของ ad group (?t=retire / ?t=tax) + เก็บ gclid ──
+  (function() {
+    var qs = new URLSearchParams(location.search);
+
+    var THEMES = {
+      retire: {
+        title: 'วางแผนเกษียณ | คำนวณกับที่ปรึกษา CFA — ฟรี | iMoney Partner',
+        bar:   '⏰ เริ่ม<strong>วางแผนเกษียณ</strong>วันนี้ ยิ่งเริ่มเร็วยิ่งใช้เงินน้อย — คำนวณกับ<strong>ที่ปรึกษา CFA</strong> ฟรี',
+        h1:    'วางแผนเกษียณ<br /><span>รู้เลยว่าต้องเก็บเท่าไหร่</span>',
+        sub:   'ให้ที่ปรึกษา CFA + MDRT คำนวณเงินก้อนที่ต้องมีตอนเกษียณ<br />พร้อมแผนลงทุนที่ไปถึงจริง — ฟรี ไม่มีค่าใช้จ่าย',
+        form:  'อยากเกษียณสบาย แต่ไม่รู้ว่าต้องเริ่มยังไง เราพร้อมช่วยคุณ 😊',
+        hideTax: true
+      },
+      tax: {
+        title: 'ลดหย่อนภาษี 2569 ThaiESG / RMF | วางแผนกับที่ปรึกษา CFA — ฟรี | iMoney Partner',
+        bar:   '⏰ <strong>ลดหย่อนภาษี 2569</strong> ก่อนหมดสิทธิ์ 31 ธ.ค. — เลือก ThaiESG / RMF ให้ถูกตัว กับ<strong>ที่ปรึกษา CFA</strong> ฟรี',
+        h1:    'ลดหย่อนภาษี 2569<br /><span>เลือกให้ถูก ประหยัดสูงสุด</span>',
+        sub:   'ให้ที่ปรึกษา CFA + MDRT ดูให้ว่าคุณลดหย่อนได้อีกเท่าไหร่<br />ThaiESG / RMF / ประกัน แบบไหนเหมาะกับคุณ — ฟรี ไม่มีค่าใช้จ่าย',
+        form:  'อยากลดหย่อนภาษีให้คุ้มที่สุด แต่ไม่รู้จะเลือกอะไร เราพร้อมช่วยคุณ 😊',
+        hideTax: false
+      }
+    };
+
+    var t = THEMES[qs.get('t')];
+    if (t) {
+      var set = function(sel, html) { var el = document.querySelector(sel); if (el) el.innerHTML = html; };
+      set('.topbar', t.bar);
+      set('.hero h1', t.h1);
+      set('.hero h1 + p', t.sub);
+      set('#apply h2', t.form);
+      document.title = t.title;
+      if (t.hideTax) {
+        var taxSec = document.querySelector('.tax-feature');
+        if (taxSec) taxSec.style.display = 'none';
+      }
+    }
+
+    // เก็บ gclid ติดไปกับ lead เพื่อย้อนดูได้ว่า lead คนไหนมาจากคีย์เวิร์ดไหน
+    var gclid = qs.get('gclid') || qs.get('wbraid') || qs.get('gbraid') || '';
+    try {
+      if (gclid) sessionStorage.setItem('imn_gclid', gclid);
+      else gclid = sessionStorage.getItem('imn_gclid') || '';
+    } catch (e) {}
+    var leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+      var hid = document.createElement('input');
+      hid.type = 'hidden';
+      hid.name = 'gclid';
+      hid.value = gclid;
+      leadForm.appendChild(hid);
+    }
+  })();
 </script>
 </body>
 </html>
