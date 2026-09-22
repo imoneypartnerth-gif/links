@@ -307,6 +307,15 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
   color:#26102E;font-weight:700;font-size:15.5px}
 @media(max-width:619px){.sticky{display:block} body{padding-bottom:76px}}
 /* equal field height (Safari select fix) */input[type=text],input[type=tel],select{height:48px;line-height:1.3}select{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding-right:40px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236B5A70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px}
+/* mobile fixes */
+.case .after b,.sample .s-row .v{white-space:nowrap}
+.tax-card h2 .hl{white-space:nowrap}
+@media(max-width:519px){
+  .adv{flex-direction:column;padding:0;gap:0}
+  .adv-photo{width:100%;height:168px;justify-content:center;align-items:flex-end}
+  .adv-photo img{width:auto;height:100%}
+  .adv-body{padding:14px 18px 18px}
+}
 </style>
 </head>
 <body>
@@ -562,8 +571,13 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
 
   var sticky = document.getElementById('sticky');
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(en){ sticky.style.display = en[0].isIntersecting ? 'none' : ''; },
-      {threshold:0.15}).observe(document.getElementById('form'));
+    var vis = {};
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ vis[e.target.id || 'hero'] = e.isIntersecting; });
+      sticky.style.display = (vis.form || vis.hero) ? 'none' : '';
+    }, {threshold:0.15});
+    io.observe(document.getElementById('form'));
+    var hc = document.querySelector('.hero-cta'); if (hc) io.observe(hc);
   }
 
   form.querySelectorAll('input,select').forEach(function(el){
