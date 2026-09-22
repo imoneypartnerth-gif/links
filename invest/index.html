@@ -26,7 +26,7 @@
   --purple-soft:#E9DCEC; --purple-whisper:#F4EDF5; --purple-dark:#3A2140;
   --gold:#C9A84C; --gold-deep:#B8963E; --gold-soft:#E8D5A3; --gold-pale:#FDF6E3;
   --navy:#1A3966; --white:#fff; --gray:#6B7280; --border:#E5E7EB; --text:#1A1A2E;
-  --font-th:'Prompt',sans-serif; --font-en:'Poppins',sans-serif;
+  --font-th:'Prompt',sans-serif; --font-en:'Poppins','Prompt',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font-th);color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -207,7 +207,7 @@ input:focus,select:focus{outline:none;border-color:var(--purple);box-shadow:0 0 
 .sample::before{content:'ตัวอย่างจากรายงานจริง · เคสสาธิต';position:absolute;top:12px;right:-2px;font-size:10.5px;
   padding:4px 12px 4px 10px;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.45);border-right:0;
   border-radius:999px 0 0 999px;color:var(--gold-soft);letter-spacing:.2px}
-.sample .s-title{font-family:var(--font-en);font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+.sample .s-title{font-family:var(--font-th);font-size:13px;font-weight:600;letter-spacing:.2px;
   color:var(--gold-soft);margin:26px 0 12px}
 .sample .s-row{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;
   padding:9px 0;border-bottom:1px solid rgba(245,236,215,.09);font-size:13.5px}
@@ -306,6 +306,7 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
   background:linear-gradient(135deg,var(--gold-deep),var(--gold) 55%,var(--gold-soft));
   color:#26102E;font-weight:700;font-size:15.5px}
 @media(max-width:619px){.sticky{display:block} body{padding-bottom:76px}}
+/* equal field height (Safari select fix) */input[type=text],input[type=tel],select{height:48px;line-height:1.3}select{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding-right:40px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236B5A70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px}
 </style>
 </head>
 <body>
@@ -336,10 +337,10 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
       </div>
       <div class="hero-art"><svg class="art" viewBox="0 0 340 270" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="สัดส่วนการจัดพอร์ตเงินก้อน">
 <g transform="translate(112,124)">
-<circle r="72" fill="none" stroke="#9253A1" stroke-opacity=".28" stroke-width="30"/>
-<circle r="72" fill="none" stroke="#C9A84C"  stroke-width="30" stroke-dasharray="158 294" transform="rotate(-90)"/>
-<circle r="72" fill="none" stroke="#E8D5A3" stroke-width="30" stroke-dasharray="102 350" transform="rotate(60)"/>
-<circle r="72" fill="none" stroke="#C8A4D0" stroke-width="30" stroke-dasharray="68 384" transform="rotate(142)"/>
+<circle r="72" fill="none" stroke="#C9A84C" stroke-width="30" stroke-dasharray="180.96 271.43" transform="rotate(-90.0)"/>
+<circle r="72" fill="none" stroke="#E8D5A3" stroke-width="30" stroke-dasharray="135.72 316.67" transform="rotate(54.0)"/>
+<circle r="72" fill="none" stroke="#C8A4D0" stroke-width="30" stroke-dasharray="67.86 384.53" transform="rotate(162.0)"/>
+<circle r="72" fill="none" stroke="#9253A1" stroke-opacity=".6" stroke-width="30" stroke-dasharray="67.86 384.53" transform="rotate(216.0)"/>
 <text y="-4" text-anchor="middle" font-family="Poppins,sans-serif" font-size="20" font-weight="800" fill="#E8D5A3">100%</text>
 <text y="14" text-anchor="middle" font-family="Poppins,sans-serif" font-size="9" font-weight="600" fill="rgba(245,236,215,0.30)" letter-spacing="1.4">ALLOCATED</text>
 </g>
@@ -347,7 +348,7 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
 <g transform="translate(214,66)"><rect width="12" height="12" rx="3" fill="#C9A84C"/><text x="20" y="10.5">Equity</text></g>
 <g transform="translate(214,100)"><rect width="12" height="12" rx="3" fill="#E8D5A3"/><text x="20" y="10.5">Fixed Income</text></g>
 <g transform="translate(214,134)"><rect width="12" height="12" rx="3" fill="#C8A4D0"/><text x="20" y="10.5">Alternative</text></g>
-<g transform="translate(214,168)"><rect width="12" height="12" rx="3" fill="#9253A1" fill-opacity=".45"/><text x="20" y="10.5">Cash</text></g>
+<g transform="translate(214,168)"><rect width="12" height="12" rx="3" fill="#9253A1" fill-opacity=".6"/><text x="20" y="10.5">Cash</text></g>
 </g>
 <text x="214" y="212" font-family="Prompt,sans-serif" font-size="11.5" font-weight="600" fill="#E8D5A3" opacity=".85">เงินก้อน ฿1,000,000+</text>
 </svg></div>
