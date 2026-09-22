@@ -307,6 +307,19 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
   color:#26102E;font-weight:700;font-size:15.5px}
 @media(max-width:619px){.sticky{display:block} body{padding-bottom:76px}}
 /* equal field height (Safari select fix) */input[type=text],input[type=tel],select{height:48px;line-height:1.3}select{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding-right:40px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236B5A70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px}
+/* tax countdown (from financial-service) */
+.tax-feature{background:var(--purple-whisper);padding:48px 16px}
+.tax-card{max-width:860px;margin:0 auto;text-align:center;color:#fff;background:linear-gradient(135deg,var(--purple-dark) 0%,#5A2870 50%,var(--navy) 100%);border:1px solid rgba(232,213,163,.28);border-radius:22px;padding:36px 28px;box-shadow:0 22px 54px rgba(58,33,64,.30)}
+.tf-badge{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#2a1c08;font-family:var(--font-th);font-weight:700;font-size:13px;padding:6px 16px;border-radius:30px;margin-bottom:16px}
+.tax-card h2{font-family:var(--font-th);font-weight:700;font-size:clamp(22px,3.6vw,30px);line-height:1.35;color:#fff;margin:0 0 12px}
+.tax-card h2 .hl{color:var(--gold-soft)}
+.tf-sub{font-family:var(--font-th);font-size:16px;color:#e7dcea;max-width:640px;margin:0 auto 24px;line-height:1.6}
+.cd-clock{display:flex;gap:9px;justify-content:center;margin-bottom:26px}
+.cd-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;padding:9px 12px;min-width:66px;text-align:center}
+.cd-num{font-family:var(--font-en);font-weight:800;font-size:26px;line-height:1;display:block}
+.cd-lbl{font-family:var(--font-th);font-size:11px;color:var(--gold-soft);margin-top:4px;display:block}
+.tf-quote{font-family:var(--font-th);font-size:14px;color:var(--gold-soft);margin:18px 0 0}
+@media(max-width:640px){.tax-card{padding:30px 18px}.tf-sub{font-size:15px}.cd-clock{gap:6px}.cd-unit{min-width:56px;padding:8px 8px}.cd-num{font-size:21px}}
 </style>
 </head>
 <body>
@@ -366,6 +379,22 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
   <div class="wrap">
     <div class="stats-grid"><div class="stat"><div class="num">500,000</div><div class="lbl">RMF + PVD + ประกันบำนาญ</div><div class="hint">เพดานรวมกลุ่มเกษียณ ไม่เกิน 30% ของรายได้</div></div><div class="stat"><div class="num">300,000</div><div class="lbl">Thai ESG + Thai ESGX</div><div class="hint">ปี 2569 เป็นปีสุดท้ายของเพดานนี้</div></div><div class="stat"><div class="num">100,000</div><div class="lbl">ประกันชีวิต + สุขภาพ</div><div class="hint">นับแยกจากกลุ่มเกษียณ</div></div></div>
     <p class="stats-foot">รวมเพดานสูงสุด 900,000 บาท · ตัวเลขประหยัดภาษี 315,000 บาท คำนวณที่อัตราภาษีขั้นสูงสุด 35% สิทธิ์ที่ใช้ได้จริงขึ้นอยู่กับรายได้ เงื่อนไขของแต่ละผลิตภัณฑ์ และสิทธิ์คงเหลือของแต่ละคน · อ้างอิงเกณฑ์ปีภาษี 2569</p>
+  </div>
+</section>
+
+<section class="tax-feature">
+  <div class="tax-card">
+    <span class="tf-badge">🔥 วาระสำคัญแห่งปี</span>
+    <h2>อย่าลืมใช้สิทธิ์ <span class="hl">ลดหย่อนภาษี 2569</span><br>ให้คุ้มที่สุด ก่อนหมดเขต 31 ธ.ค.</h2>
+    <p class="tf-sub">เลือก ThaiESG / RMF / ประกัน ที่ใช่กับเป้าหมายคุณ ไม่ใช่ซื้อตามกระแสปลายปี — เริ่มตอนนี้ ทยอยลงทุนได้ ไม่ต้องควักก้อนใหญ่</p>
+    <div class="cd-clock" id="taxcd" aria-label="นับถอยหลังถึงสิ้นปีภาษี">
+      <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">วัน</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">ชม.</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">นาที</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">วิ</span></div>
+    </div>
+    <a class="btn-gold" href="#form">เช็กสิทธิ์ลดหย่อนของฉัน →</a>
+    <p class="tf-quote">“ พลาดไปแม้แต่ 1 วินาที ก็ย้อนกลับมาแก้ไขไม่ได้ — เริ่มวางแผนตอนนี้ สบายใจที่สุด ”</p>
   </div>
 </section>
 
@@ -612,10 +641,19 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
       d.style.display = 'block';
       sticky.style.display = 'none';
       d.scrollIntoView({behavior:'smooth', block:'center'});
-      if (window.gtag) { gtag('event','conversion',{'send_to':'AW-11371234695/_Kr0CNik0rgcEleLna4q'}); }
+      if (window.gtag) { gtag('event','conversion',{'send_to':'AW-11371234695/QE12CNyCnr8cEIeLna4q'}); }
     });
   });
 })();
+</script>
+<script>
+(function(){var end=new Date('2026-12-31T23:59:59+07:00').getTime();
+function p(n){return(n<10?'0':'')+n}
+function set(id,v){var el=document.getElementById(id);if(el)el.textContent=v}
+function tick(){var d=end-Date.now();if(d<0)d=0;
+set('cd-d',Math.floor(d/86400000));set('cd-h',p(Math.floor(d%86400000/3600000)));
+set('cd-m',p(Math.floor(d%3600000/60000)));set('cd-s',p(Math.floor(d%60000/1000)))}
+tick();setInterval(tick,1000)})();
 </script>
 </body>
 </html>
