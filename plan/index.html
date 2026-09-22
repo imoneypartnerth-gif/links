@@ -114,6 +114,7 @@ footer b{color:var(--gs);font-weight:600} footer a{color:var(--gs)}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(38,16,46,.95);border-top:1px solid rgba(201,168,76,.25);display:none}
 .sticky a{display:block;text-align:center;padding:12px;border-radius:11px;text-decoration:none;background:linear-gradient(135deg,var(--gd),var(--g) 55%,var(--gs));color:#26102E;font-weight:700;font-size:15px}
 @media(max-width:899px){.sticky.on{display:block}}
+/* equal field height (Safari select fix) */input[type=text],input[type=tel],select{height:46px;line-height:1.3}select{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding-right:40px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236B5A70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px}
 </style>
 </head>
 <body>
