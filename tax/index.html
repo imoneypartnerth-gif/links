@@ -320,6 +320,15 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
 .cd-lbl{font-family:var(--font-th);font-size:11px;color:var(--gold-soft);margin-top:4px;display:block}
 .tf-quote{font-family:var(--font-th);font-size:14px;color:var(--gold-soft);margin:18px 0 0}
 @media(max-width:640px){.tax-card{padding:30px 18px}.tf-sub{font-size:15px}.cd-clock{gap:6px}.cd-unit{min-width:56px;padding:8px 8px}.cd-num{font-size:21px}}
+/* mobile fixes */
+.case .after b,.sample .s-row .v{white-space:nowrap}
+.tax-card h2 .hl{white-space:nowrap}
+@media(max-width:519px){
+  .adv{flex-direction:column;padding:0;gap:0}
+  .adv-photo{width:100%;height:168px;justify-content:center;align-items:flex-end}
+  .adv-photo img{width:auto;height:100%}
+  .adv-body{padding:14px 18px 18px}
+}
 </style>
 </head>
 <body>
@@ -597,8 +606,13 @@ footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-cont
 
   var sticky = document.getElementById('sticky');
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(en){ sticky.style.display = en[0].isIntersecting ? 'none' : ''; },
-      {threshold:0.15}).observe(document.getElementById('form'));
+    var vis = {};
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ vis[e.target.id || 'hero'] = e.isIntersecting; });
+      sticky.style.display = (vis.form || vis.hero) ? 'none' : '';
+    }, {threshold:0.15});
+    io.observe(document.getElementById('form'));
+    var hc = document.querySelector('.hero-cta'); if (hc) io.observe(hc);
   }
 
   form.querySelectorAll('input,select').forEach(function(el){
