@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>วางแผนเกษียณเร็ว FIRE ต้องมีเท่าไหร่ | คำนวณฟรีกับ CFA | iMoney Partner</title>
+<meta name="description" content="คำนวณเงินก้อนที่ต้องมีเพื่อเกษียณ และแผนสะสมรายเดือน — ปรึกษาฟรีกับ CFA Charterholder">
+<meta property="og:title" content="วางแผนเกษียณเร็ว FIRE ต้องมีเท่าไหร่ | คำนวณฟรีกับ CFA | iMoney Partner">
+<meta property="og:description" content="คำนวณเงินก้อนที่ต้องมีเพื่อเกษียณ และแผนสะสมรายเดือน — ปรึกษาฟรีกับ CFA Charterholder">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://links.imoneypartner.com/assets/phak.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../im-mark-white.png">
+<link rel="canonical" href="https://links.imoneypartner.com/retire/">
+<!-- Google Ads tag — ชุดเดียวกับหน้า root -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11371234695"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11371234695');</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "FinancialService", "name": "iMoney Partner", "description": "คำนวณเงินก้อนที่ต้องมีเพื่อเกษียณ และแผนสะสมรายเดือน — ปรึกษาฟรีกับ CFA Charterholder", "url": "https://links.imoneypartner.com/retire/", "telephone": "+66642469623", "areaServed": "TH", "priceRange": "ฟรี — การนัดคุยและแผนเบื้องต้นไม่มีค่าใช้จ่าย", "founder": [{"@type": "Person", "name": "Phak Rujirakamort", "jobTitle": "CFA Charterholder"}, {"@type": "Person", "name": "Kanokwan Chalalaiwiwat", "jobTitle": "Investment Planner (IP License)"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ฟรีจริงไหม มีค่าใช้จ่ายแอบแฝงหรือเปล่า", "acceptedAnswer": {"@type": "Answer", "text": "การนัดคุยและแผนเบื้องต้นไม่มีค่าใช้จ่ายและไม่มีข้อผูกมัด เราได้รับค่าตอบแทนจากสถาบันการเงินเมื่อคุณเลือกใช้ผลิตภัณฑ์ผ่านเรา — คุณจึงไม่ต้องจ่ายค่าที่ปรึกษา และจะได้แผนกลับไปไม่ว่าจะตัดสินใจอย่างไร"}}, {"@type": "Question", "name": "จะโดนขายประกันหรือกองทุนไหม", "acceptedAnswer": {"@type": "Answer", "text": "เราจะไม่เสนอผลิตภัณฑ์ใด ๆ ก่อนที่คุณจะเห็นภาพรวมแผนของตัวเองและเข้าใจว่าทำไมถึงต้องใช้เครื่องมือนั้น ทุกการตัดสินใจเป็นของคุณ และไม่มีการโทรตามขายซ้ำ"}}, {"@type": "Question", "name": "นัดคุยใช้เวลานานแค่ไหน ที่ไหน", "acceptedAnswer": {"@type": "Answer", "text": "นัดแรกประมาณ 45–60 นาที เลือกได้ทั้ง Online Meeting หรือพบตัวในกรุงเทพฯ วันธรรมดาหรือเสาร์–อาทิตย์ก็ได้"}}, {"@type": "Question", "name": "อายุ 40 กว่าแล้ว เริ่มตอนนี้ยังทันไหม", "acceptedAnswer": {"@type": "Answer", "text": "ทัน — เพียงแต่ตัวเลขที่ต้องเก็บต่อเดือนจะสูงกว่าคนที่เริ่มเร็ว การรู้ตัวเลขจริงตั้งแต่วันนี้ดีกว่าเดาไปอีก 10 ปี"}}, {"@type": "Question", "name": "FIRE ต้องมีเงินเท่าไหร่", "acceptedAnswer": {"@type": "Answer", "text": "หลักคิดเบื้องต้นคือ 25 เท่าของรายจ่ายต่อปี แต่ตัวเลขจริงขึ้นกับอายุที่หยุดงาน เงินเฟ้อ ค่ารักษาพยาบาล และผลตอบแทน — เราคำนวณให้เป็นตัวเลขของคุณเอง"}}]}]</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#9253A1; --purple-mid:#744280; --purple-light:#C8A4D0;
+  --purple-soft:#E9DCEC; --purple-whisper:#F4EDF5; --purple-dark:#3A2140;
+  --gold:#C9A84C; --gold-deep:#B8963E; --gold-soft:#E8D5A3; --gold-pale:#FDF6E3;
+  --navy:#1A3966; --white:#fff; --gray:#6B7280; --border:#E5E7EB; --text:#1A1A2E;
+  --font-th:'Prompt',sans-serif; --font-en:'Poppins',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-th);color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.eyebrow{font-family:var(--font-en);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-soft);opacity:.95}
+
+/* brand mark in hero */
+.mark{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.mark img{width:52px;height:52px;object-fit:contain;border-radius:50%;padding:7px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.45)}
+.mark .mk-name{font-family:var(--font-en);font-size:14.5px;font-weight:700;letter-spacing:.3px;color:var(--gold-soft)}
+.mark .mk-sub{font-size:11.5px;color:rgba(245,236,215,.5);margin-top:1px}
+
+/* advisors */
+.advisors{background:var(--purple-whisper)}
+.adv{display:flex;gap:16px;align-items:stretch;background:var(--white);
+  border:1px solid var(--purple-soft);border-radius:18px;padding:0 20px 0 0;overflow:hidden;margin-bottom:14px}
+.adv-photo{flex-shrink:0;width:124px;display:flex;align-items:flex-end;
+  background:linear-gradient(180deg,var(--purple-soft),var(--purple-whisper))}
+.adv-photo img{width:100%;height:auto;display:block}
+.adv-body{padding:18px 0 18px 0;min-width:0}
+.adv-name{font-family:var(--font-en);font-size:18px;font-weight:700;color:var(--purple-dark);line-height:1.3}
+.adv-role{font-size:13.5px;font-weight:600;color:var(--purple);margin-top:2px}
+.adv-title{font-size:12.5px;color:var(--gray);margin-top:4px;line-height:1.55}
+.adv-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.adv-tag{font-size:11.5px;font-weight:500;padding:3px 10px;border-radius:999px;
+  background:var(--gold-pale);border:1px solid rgba(201,168,76,.38);color:var(--purple-dark)}
+@media(max-width:519px){
+  .adv{padding:0 16px 0 0;gap:12px}
+  .adv-photo{width:98px}
+  .adv-name{font-size:16px}
+}
+.footer-mark{height:30px;width:auto;opacity:.7;margin-bottom:8px}
+
+/* HERO */
+.hero{position:relative;color:#F5ECD7;padding:56px 0 52px;overflow:hidden;
+  background:linear-gradient(160deg,#26102E 0%,#3A2140 55%,#26102E 100%)}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 82% 12%,rgba(201,168,76,.16) 0%,transparent 58%),
+             radial-gradient(ellipse at 10% 92%,rgba(146,83,161,.38) 0%,transparent 60%)}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:820px){
+  .hero{padding:60px 0 58px}
+  .wrap{max-width:1040px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}
+  .hero-art{justify-self:end}
+}
+.hero-art{width:100%;max-width:340px;margin:4px auto 0}
+.art{width:100%;height:auto;display:block;
+  filter:drop-shadow(0 10px 26px rgba(0,0,0,.35));animation:artIn .8s .15s ease both}
+@keyframes artIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@media(min-width:820px){
+  section .wrap{max-width:1040px}
+  .cards{grid-template-columns:1fr 1fr}
+}
+.hero h1{font-size:clamp(28px,6.4vw,42px);font-weight:700;line-height:1.28;margin:14px 0 16px;letter-spacing:-.2px}
+.hero h1 .hl{background:linear-gradient(135deg,var(--gold-soft) 25%,var(--gold) 70%,var(--gold-soft));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.sub{font-size:clamp(15px,3.4vw,17px);color:rgba(245,236,215,.82);max-width:610px}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.badge{font-size:12px;font-weight:500;padding:5px 12px;border-radius:999px;
+  background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.42);color:var(--gold-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.chip{font-size:12.5px;font-weight:500;padding:5px 12px;border-radius:999px;
+  background:rgba(146,83,161,.2);border:1px solid rgba(200,164,208,.3);color:var(--purple-light)}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:15px 26px;border-radius:14px;
+  background:linear-gradient(135deg,var(--gold-deep),var(--gold) 55%,var(--gold-soft));
+  color:#26102E;font-family:var(--font-th);font-size:16px;font-weight:700;text-decoration:none;
+  box-shadow:0 8px 28px rgba(201,168,76,.32);transition:transform .2s,box-shadow .2s}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(201,168,76,.42)}
+.hero-note{margin-top:14px;font-size:13px;color:var(--gold-soft);
+  border-left:2px solid rgba(201,168,76,.55);padding-left:12px}
+
+/* SECTIONS */
+section{padding:52px 0}
+.sec-label{font-family:var(--font-en);font-size:11px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+h2{font-size:clamp(22px,4.8vw,30px);font-weight:700;line-height:1.35;margin-bottom:26px;letter-spacing:-.2px}
+.cards{display:grid;gap:14px}
+@media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
+.card{border:1px solid var(--border);border-radius:16px;padding:20px 20px 22px;background:var(--white);
+  transition:border-color .2s,box-shadow .2s}
+.card:hover{border-color:var(--purple-soft);box-shadow:0 6px 24px rgba(58,33,64,.07)}
+.card-ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;background:var(--purple-whisper);border:1px solid var(--purple-soft);color:var(--purple)}
+.card-ic svg{width:21px;height:21px}
+.gets .card-ic{background:var(--gold-pale);border-color:rgba(201,168,76,.42);color:var(--gold-deep)}
+.card h3{font-size:16.5px;font-weight:600;margin-bottom:6px;color:var(--purple-dark)}
+.card p{font-size:14.5px;color:var(--gray)}
+.pains{background:var(--purple-whisper)}
+.pains .card{background:var(--white);border-color:var(--purple-soft)}
+
+.gets .card h3{color:var(--navy)}
+
+
+/* STAT STRIP */
+.stats{background:linear-gradient(160deg,#3A2140,#26102E);color:#F5ECD7;padding:38px 0}
+.stats-grid{display:grid;gap:12px}
+@media(min-width:620px){.stats-grid{grid-template-columns:repeat(3,1fr)}}
+.stat{border:1px solid rgba(201,168,76,.3);border-radius:16px;padding:18px 18px 20px;
+  background:rgba(255,255,255,.03);backdrop-filter:blur(8px)}
+.stat .num{font-family:var(--font-en);font-size:clamp(26px,5.6vw,34px);font-weight:800;line-height:1.1;
+  background:linear-gradient(135deg,var(--gold-soft) 25%,var(--gold) 75%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat .lbl{font-size:14px;font-weight:600;margin-top:5px;color:#F5ECD7}
+.stat .hint{font-size:12.5px;color:rgba(245,236,215,.5);margin-top:4px;line-height:1.55}
+.stats-foot{font-size:11.5px;color:rgba(245,236,215,.38);margin-top:16px;line-height:1.7}
+
+/* STEPS */
+.steps{background:var(--gold-pale)}
+.steps-grid{display:grid;gap:12px}
+@media(min-width:620px){.steps-grid{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--white);border:1px solid rgba(201,168,76,.32);border-radius:14px;padding:18px 16px}
+.step .n{font-family:var(--font-en);font-size:12px;font-weight:800;color:var(--gold-deep);letter-spacing:1px}
+.step .ic{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:var(--white);border:1px solid rgba(201,168,76,.4);color:var(--gold-deep);margin-bottom:10px}
+.step .ic svg{width:19px;height:19px}
+.step h3{font-size:15.5px;font-weight:600;margin:6px 0 4px}
+.step p{font-size:13.5px;color:var(--gray);line-height:1.6}
+
+/* FORM */
+.form-sec{background:linear-gradient(160deg,#3A2140,#26102E);color:#F5ECD7}
+.form-sec h2{color:#F5ECD7}
+.form-sec .sec-label{color:var(--gold-soft)}
+.form-card{background:var(--white);color:var(--text);border-radius:20px;padding:26px 22px 28px;
+  box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.field{margin-bottom:16px}
+label{display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:var(--purple-dark)}
+label .req{color:#C0392B}
+input[type=text],input[type=tel],select{width:100%;padding:12px 14px;border:1px solid var(--border);
+  border-radius:11px;font-family:var(--font-th);font-size:15px;color:var(--text);background:var(--white);
+  transition:border-color .18s,box-shadow .18s}
+input:focus,select:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 3px rgba(146,83,161,.14)}
+.row{display:grid;gap:14px}
+@media(min-width:560px){.row{grid-template-columns:1fr 1fr}}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.check{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--border);
+  border-radius:11px;font-size:14px;cursor:pointer;transition:all .18s;margin:0}
+.check:hover{border-color:var(--purple-light);background:var(--purple-whisper)}
+.check input{accent-color:var(--purple);width:16px;height:16px;cursor:pointer}
+.qualifier{background:var(--gold-pale);border:1px solid rgba(201,168,76,.4);border-radius:12px;
+  padding:12px 14px;font-size:13.5px;color:var(--purple-dark);margin-bottom:18px}
+.submit{width:100%;margin-top:6px;padding:16px;border:none;border-radius:14px;cursor:pointer;
+  background:linear-gradient(135deg,var(--gold-deep),var(--gold) 55%,var(--gold-soft));
+  color:#26102E;font-family:var(--font-th);font-size:16.5px;font-weight:700;
+  box-shadow:0 8px 24px rgba(201,168,76,.3);transition:transform .2s,box-shadow .2s}
+.submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,168,76,.4)}
+.submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.privacy{font-size:12px;color:var(--gray);text-align:center;margin-top:12px;line-height:1.6}
+.done{display:none;text-align:center;padding:26px 8px}
+.done .tick{font-size:44px;line-height:1}
+.done h3{font-size:21px;font-weight:700;margin:12px 0 8px;color:var(--purple-dark)}
+.done p{font-size:15px;color:var(--gray)}
+
+/* FIT CHECKLIST */
+.fit{background:var(--purple-whisper)}
+.fit-list{display:grid;gap:10px}
+@media(min-width:620px){.fit-list{grid-template-columns:1fr 1fr 1fr}}
+.fit-item{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--purple-soft);
+  border-radius:14px;padding:16px 16px 17px}
+.fit-item .tick{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--gold-pale);
+  border:1px solid rgba(201,168,76,.5);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;margin-top:1px}
+.fit-item b{display:block;font-size:15px;font-weight:600;color:var(--purple-dark);line-height:1.45}
+.fit-item span{display:block;font-size:13.5px;color:var(--gray);margin-top:3px;line-height:1.55}
+.fit-not{margin-top:16px;font-size:13px;color:var(--gray);border-left:3px solid var(--purple-light);padding:6px 0 6px 14px;line-height:1.6}
+
+/* SAMPLE DELIVERABLE */
+.gets-grid{display:grid;gap:22px;align-items:start}
+@media(min-width:820px){.gets-grid{grid-template-columns:1fr 1fr}}
+.sample{background:linear-gradient(160deg,#3A2140,#26102E);border-radius:18px;padding:18px 16px 14px;color:#F5ECD7;
+  box-shadow:0 18px 44px rgba(38,16,46,.28);position:relative;overflow:hidden}
+.sample .shot{display:block;width:100%;height:auto;border-radius:10px;border:1px solid rgba(201,168,76,.35);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);margin-top:10px;background:#fff}
+.sample .s-cap{font-size:12.5px;color:rgba(245,236,215,.72);margin-top:8px;line-height:1.5}
+.sample .s-cap b{color:var(--gold-soft);font-weight:600}
+.sample::before{content:'ตัวอย่างจากรายงานจริง · เคสสาธิต';position:absolute;top:12px;right:-2px;font-size:10.5px;
+  padding:4px 12px 4px 10px;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.45);border-right:0;
+  border-radius:999px 0 0 999px;color:var(--gold-soft);letter-spacing:.2px}
+.sample .s-title{font-family:var(--font-en);font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold-soft);margin:26px 0 12px}
+.sample .s-row{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;
+  padding:9px 0;border-bottom:1px solid rgba(245,236,215,.09);font-size:13.5px}
+.sample .s-row:last-of-type{border-bottom:0}
+.sample .s-row .k{color:rgba(245,236,215,.85)}
+.sample .s-row .v{font-family:var(--font-en);font-weight:700;color:var(--gold-soft);text-align:right;white-space:nowrap}
+.sample .s-row .v.dim{color:rgba(245,236,215,.45);font-weight:600}
+.sample .bar{grid-column:1/-1;height:6px;border-radius:3px;background:rgba(146,83,161,.35);overflow:hidden;margin-top:-2px}
+.sample .bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-soft))}
+.sample .s-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:12px;
+  border-top:1px solid rgba(201,168,76,.35)}
+.sample .s-total .k{font-size:13px;color:rgba(245,236,215,.75)}
+.sample .s-total .v{font-family:var(--font-en);font-size:22px;font-weight:800;color:var(--gold-soft)}
+.sample .s-note{font-size:11.5px;color:rgba(245,236,215,.4);margin-top:10px;line-height:1.55}
+.gets .cards{grid-template-columns:1fr}
+.gets .card{padding:16px 18px}
+.gets .card-ic{width:34px;height:34px;margin-bottom:8px}
+.gets .card-ic svg{width:18px;height:18px}
+.gets .card h3{font-size:15.5px}
+.gets .card p{font-size:13.5px}
+
+/* MID CTA */
+.mid-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+  margin-top:26px;padding:18px 20px;border-radius:16px;background:var(--gold-pale);border:1px solid rgba(201,168,76,.4)}
+.mid-cta p{font-size:14.5px;color:var(--purple-dark);line-height:1.5}
+.mid-cta p b{font-weight:600}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;text-decoration:none;
+  background:linear-gradient(135deg,var(--gold-deep),var(--gold) 55%,var(--gold-soft));color:#26102E;
+  font-weight:700;font-size:15px;white-space:nowrap;box-shadow:0 6px 20px rgba(201,168,76,.28);transition:transform .2s}
+.btn-gold:hover{transform:translateY(-2px)}
+
+/* honeypot — ซ่อนจากคนจริง */
+.hp{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0}
+
+/* FORM HEADER */
+.form-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:-12px 0 22px;font-size:13px;color:rgba(245,236,215,.72)}
+.form-meta span::before{content:'✓';color:var(--gold-soft);font-weight:700;margin-right:6px}
+.hint{font-size:12px;color:var(--gray);margin-top:5px;line-height:1.5}
+.err{display:none;font-size:12.5px;color:#C0392B;margin-top:5px}
+.field.invalid input,.field.invalid select{border-color:#C0392B;box-shadow:0 0 0 3px rgba(192,57,43,.12)}
+.field.invalid .err{display:block}
+.done .next{margin-top:18px;text-align:left;background:var(--purple-whisper);border:1px solid var(--purple-soft);
+  border-radius:14px;padding:14px 16px;font-size:14px;color:var(--purple-dark);line-height:1.6}
+.done .next b{display:block;font-weight:600;margin-bottom:4px}
+.btn-line{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:12px 20px;border-radius:12px;
+  background:#06C755;color:#fff;font-weight:700;font-size:15px;text-decoration:none}
+
+/* REVIEWS */
+.reviews{background:var(--white)}
+.rev-grid{display:grid;gap:14px}
+@media(min-width:620px){.rev-grid{grid-template-columns:1fr 1fr 1fr}}
+.rev{border:1px solid var(--border);border-radius:16px;padding:20px;background:var(--white);display:flex;flex-direction:column}
+.rev .stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:10px}
+.rev p{font-size:14.5px;color:var(--text);line-height:1.65;flex:1}
+.rev .who{display:flex;align-items:center;gap:10px;margin-top:14px}
+.rev .av{width:34px;height:34px;border-radius:50%;background:var(--purple-whisper);border:1px solid var(--purple-soft);
+  color:var(--purple);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.rev .who b{display:block;font-size:13.5px;font-weight:600;color:var(--purple-dark)}
+.rev .who span{display:block;font-size:12px;color:var(--gray)}
+
+/* CASE CARDS */
+.case-grid{display:grid;gap:14px}
+@media(min-width:620px){.case-grid{grid-template-columns:1fr 1fr}}
+.case{border:1px solid var(--purple-soft);border-radius:16px;padding:18px 20px 20px;background:var(--purple-whisper)}
+.case .who{font-size:12.5px;font-weight:600;color:var(--purple);letter-spacing:.2px;margin-bottom:6px}
+.case .before{font-size:14px;color:var(--gray);line-height:1.6}
+.case .after{margin-top:10px;padding:12px 14px;border-radius:12px;background:var(--white);border:1px solid rgba(201,168,76,.4);font-size:14px;color:var(--purple-dark);line-height:1.6}
+.case .after b{font-family:var(--font-en);font-weight:800;color:var(--gold-deep);font-size:17px}
+
+/* FAQ */
+.faq{background:var(--purple-whisper)}
+.faq details{background:var(--white);border:1px solid var(--purple-soft);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-size:15px;font-weight:600;color:var(--purple-dark);
+  display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-family:var(--font-en);font-size:20px;font-weight:600;color:var(--gold-deep);flex-shrink:0;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 18px 18px;font-size:14.5px;color:var(--gray);line-height:1.7}
+
+/* FINAL CTA */
+.final{background:linear-gradient(160deg,#3A2140,#26102E);color:#F5ECD7;text-align:center;padding:56px 0}
+.final h2{color:#F5ECD7;margin-bottom:10px}
+.final p{font-size:15px;color:rgba(245,236,215,.72);max-width:520px;margin:0 auto 24px}
+
+/* FOOTER */
+footer{background:#1a0d1f;color:rgba(245,236,215,.55);padding:34px 0;font-size:13px;text-align:center}
+footer a{color:var(--gold-soft);text-decoration:none}
+footer .lic{margin-top:10px;font-size:11.5px;color:rgba(245,236,215,.34);line-height:1.7}
+footer nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:12.5px}
+
+/* STICKY MOBILE CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(38,16,46,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(201,168,76,.25);
+  display:none}
+.sticky a{display:block;text-align:center;padding:13px;border-radius:12px;text-decoration:none;
+  background:linear-gradient(135deg,var(--gold-deep),var(--gold) 55%,var(--gold-soft));
+  color:#26102E;font-weight:700;font-size:15.5px}
+@media(max-width:619px){.sticky{display:block} body{padding-bottom:76px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="mark">
+      <img src="../im-mark-white.png" alt="iMoney Partner" width="52" height="52">
+      <div>
+        <div class="mk-name">iMoney Partner</div>
+        <div class="mk-sub">ที่ปรึกษาการเงินอิสระ</div>
+      </div>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">EARLY RETIREMENT</div>
+        <h1>FIRE ก่อนอายุ 40<br><span class="hl">ต้องมีเท่าไหร่ถึงหยุดทำงานได้</span></h1>
+        <p class="sub">จะ 40, 45 หรือ 50 — ทุกเป้าหมายมีตัวเลขของมัน เราคำนวณจากรายจ่ายจริงของคุณว่าต้องมีเท่าไหร่ และต้องปั้นเงินลงทุนเดือนละเท่าไหร่ถึงจะถึง</p>
+        <div class="badges">
+          <span class="badge">CFA Charterholder</span>
+          <span class="badge">MDRT 2021–2026</span>
+          <span class="badge">500+ เคส</span>
+          <span class="badge">AUM 500M THB+</span>
+        </div>
+        <div class="chips"><span class="chip">ตัวเลขเป้าหมาย</span><span class="chip">แผนสะสมรายเดือน</span><span class="chip">เงินเฟ้อ</span><span class="chip">แผนถอนเงิน</span><span class="chip">ค่ารักษาพยาบาล</span></div>
+        <a class="hero-cta" href="#form">คำนวณอายุเกษียณของฉัน →</a>
+        <div class="hero-note">นัดแรก 45–60 นาที · ออนไลน์หรือพบตัว กทม. · ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด</div>
+      </div>
+      <div class="hero-art"><svg class="art" viewBox="0 0 340 270" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="กราฟการสะสมเงินสู่เป้าหมายเกษียณ">
+<defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#C9A84C" stop-opacity=".45"/><stop offset="1" stop-color="#C9A84C" stop-opacity="0"/></linearGradient></defs>
+<g stroke="#C8A4D0" stroke-opacity=".18" stroke-width="1">
+<line x1="40" y1="60" x2="310" y2="60"/><line x1="40" y1="110" x2="310" y2="110"/>
+<line x1="40" y1="160" x2="310" y2="160"/><line x1="40" y1="210" x2="310" y2="210"/></g>
+<path d="M40 210 C110 206 150 190 190 156 C230 122 258 76 300 44 L300 210 Z" fill="url(#rg)"/>
+<path d="M40 210 C110 206 150 190 190 156 C230 122 258 76 300 44" stroke="#E8D5A3" stroke-width="3" stroke-linecap="round"/>
+<g fill="#26102E" stroke="#E8D5A3" stroke-width="2.5">
+<circle cx="110" cy="203" r="6"/><circle cx="190" cy="156" r="6"/><circle cx="248" cy="98" r="6"/></g>
+<g transform="translate(300,44)">
+<line x1="0" y1="0" x2="0" y2="-46" stroke="#E8D5A3" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M0 -46 L30 -37 L0 -28 Z" fill="#C9A84C"/>
+<circle cx="0" cy="0" r="8" fill="#C9A84C" stroke="#26102E" stroke-width="2.5"/></g>
+<line x1="40" y1="210" x2="310" y2="210" stroke="#C8A4D0" stroke-opacity=".5" stroke-width="2"/>
+<line x1="40" y1="42" x2="40" y2="210" stroke="#C8A4D0" stroke-opacity=".5" stroke-width="2"/>
+<g font-family="Poppins,sans-serif" font-size="9.5" font-weight="600" fill="rgba(245,236,215,0.30)" letter-spacing="1">
+<text x="40" y="230">TODAY</text><text x="176" y="230">+10Y</text><text x="270" y="230">FIRE</text></g>
+<text x="40" y="32" font-family="Poppins,sans-serif" font-size="11" font-weight="700" fill="#E8D5A3" letter-spacing="1.6">RETIREMENT TARGET</text>
+</svg></div>
+    </div>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid"><div class="stat"><div class="num">25x</div><div class="lbl">รายจ่ายต่อปี</div><div class="hint">หลักคิด FIRE เบื้องต้นก่อนปรับตามชีวิตจริง</div></div><div class="stat"><div class="num">3%</div><div class="lbl">เงินเฟ้อที่มักถูกลืม</div><div class="hint">กัดกำลังซื้อทุกปีตลอดช่วงเกษียณ</div></div><div class="stat"><div class="num">30+</div><div class="lbl">ปีหลังเกษียณ</div><div class="hint">ช่วงเวลาที่เงินก้อนต้องอยู่ให้ได้</div></div></div>
+    <p class="stats-foot">ตัวเลขข้างต้นเป็นหลักคิดเบื้องต้นสำหรับตั้งต้นคำนวณ ไม่ใช่ตัวเลขที่ใช้ได้กับทุกคน · แผนจริงต้องคำนวณจากรายจ่าย เป้าหมาย และสมมติฐานผลตอบแทนของแต่ละบุคคล</p>
+  </div>
+</section>
+
+<section class="fit">
+  <div class="wrap">
+    <div class="sec-label">Is This For You</div>
+    <h2>เหมาะกับคุณ ถ้า…</h2>
+    <div class="fit-list"><div class="fit-item"><div class="tick">✓</div><div><b>อายุ 30–45 และมีรายได้ประจำมั่นคง</b><span>ยังมีเวลาให้เงินทำงาน แต่ต้องเริ่มด้วยตัวเลขที่ถูก</span></div></div><div class="fit-item"><div class="tick">✓</div><div><b>เก็บเงินอยู่แล้ว แต่ไม่รู้ว่าพอไหม</b><span>มีกองทุนสำรองเลี้ยงชีพ RMF หรือพอร์ตอยู่บ้าง</span></div></div><div class="fit-item"><div class="tick">✓</div><div><b>อยากรู้ว่าจะหยุดทำงานประจำได้ตอนอายุเท่าไหร่</b><span>40, 45 หรือ 50 — ทุกเป้ามีตัวเลขของมัน</span></div></div></div>
+    <p class="fit-not">ถ้ายังไม่มีเงินเหลือเก็บเลยในแต่ละเดือน แนะนำเริ่มจากแผนภาพรวมก่อน แล้วค่อยต่อยอดเป็นแผนเกษียณ</p>
+  </div>
+</section>
+
+<section class="gets">
+  <div class="wrap">
+    <div class="sec-label">What You Get</div>
+    <h2>สิ่งที่คุณจะได้จากการนัดคุย</h2>
+    <div class="gets-grid">
+      <div class="cards"><div class="card"><div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></div><h3>ตัวเลขเป้าหมายเกษียณ</h3><p>เงินก้อนที่ต้องมี ณ วันเกษียณ คำนวณจากรายจ่ายจริงและอายุขัยที่สมเหตุสมผล</p></div><div class="card"><div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.7 2.7 3 6 3"/><ellipse cx="15" cy="15" rx="6" ry="3"/><path d="M9 15v2c0 1.7 2.7 3 6 3s6-1.3 6-3v-2"/></svg></div><h3>แผนสะสมรายเดือน</h3><p>ต้องเก็บเดือนละเท่าไหร่ และต้องการผลตอบแทนเฉลี่ยระดับไหนจึงจะถึงเป้า</p></div><div class="card"><div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>สมมติฐานที่เห็นชัด</h3><p>เงินเฟ้อ ผลตอบแทน และอายุเกษียณ ปรับดูได้ว่าเปลี่ยนสมมติฐานแล้วภาพเปลี่ยนแค่ไหน</p></div><div class="card"><div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.5c0 1.6 4 3.2 4 5.5s-4 3.9-4 5.5V21"/><path d="M16 3v3.5c0 1.6-4 3.2-4 5.5s4 3.9 4 5.5V21"/></svg></div><h3>แผนถอนเงินหลังเกษียณ</h3><p>ไม่ใช่แค่สะสมให้ถึง แต่วางลำดับการถอนให้เงินอยู่ได้ตลอดช่วงเกษียณ</p></div></div>
+      <div class="sample"><div class="s-title">สิ่งที่คุณจะได้รับ · จากระบบวางแผน iMoneyPlan</div><a href="../assets/sample-retire-timeline.webp" target="_blank" rel="noopener" title="คลิกเพื่อดูขนาดใหญ่"><img class="shot" src="../assets/sample-retire-timeline.webp" alt="Life Timeline — เห็นทั้งเส้นทาง ปัจจุบัน → เป้าระหว่างทาง → เกษียณ → อายุขัย บนหน้าเดียว" loading="lazy" decoding="async" width="1240" height="578"></a><div class="s-cap"><b>Life Timeline</b> — เห็นทั้งเส้นทาง ปัจจุบัน → เป้าระหว่างทาง → เกษียณ → อายุขัย บนหน้าเดียว</div><a href="../assets/sample-gap.webp" target="_blank" rel="noopener" title="คลิกเพื่อดูขนาดใหญ่"><img class="shot" src="../assets/sample-gap.webp" alt="Gap Summary — เงินก้อน ณ วันเกษียณ ต้องมีเท่าไหร่ มีแล้วเท่าไหร่ ยังขาดเท่าไหร่" loading="lazy" decoding="async" width="1240" height="321"></a><div class="s-cap"><b>Gap Summary</b> — เงินก้อน ณ วันเกษียณ ต้องมีเท่าไหร่ มีแล้วเท่าไหร่ ยังขาดเท่าไหร่</div><div class="s-note">ภาพจากรายงานจริงของระบบ · เคสสาธิต "สมชาย ใจดี" อายุ 35 · ไม่ใช่ข้อมูลลูกค้า</div></div>
+    </div>
+    <div class="mid-cta">
+      <p><b>เตรียมแค่รายจ่ายต่อเดือนคร่าว ๆ กับยอดเงินเก็บที่มีตอนนี้</b><br>นัดแรกใช้เวลา 45–60 นาที ออนไลน์หรือพบตัวใน กทม.</p>
+      <a class="btn-gold" href="#form">คำนวณอายุเกษียณของฉัน →</a>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-label">How It Works</div>
+    <h2>เริ่มต้นง่าย ๆ 4 ขั้นตอน</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h11l5 5v13H4z"/><path d="M15 3v5h5"/><path d="M8 13h8M8 17h5"/></svg></div><div class="n">STEP 01</div><h3>กรอกฟอร์ม 1 นาที</h3><p>บอกแค่ชื่อ เบอร์ และเป้าหมายคร่าว ๆ</p></div>
+      <div class="step"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg></div><div class="n">STEP 02</div><h3>เราโทรนัดเวลา</h3><p>ภายใน 1 วันทำการ เลือกเวลาที่คุณสะดวก</p></div>
+      <div class="step"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div class="n">STEP 03</div><h3>คุย 45–60 นาที</h3><p>คำนวณตัวเลขเป้าหมาย และดูว่าต้องเก็บเดือนละเท่าไหร่ถึงจะทัน</p></div>
+      <div class="step"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/><path d="M12 8v4l3 2"/></svg></div><div class="n">STEP 04</div><h3>รับแผนเป็นเอกสาร</h3><p>แผนเป็นของคุณ ไม่มีข้อผูกมัด ตัดสินใจต่อได้เอง</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="form-sec" id="form">
+  <div class="wrap">
+    <div class="sec-label">Book a Consultation</div>
+    <h2>ขอคำนวณตัวเลขเกษียณของคุณ</h2>
+    <div class="form-meta"><span>ไม่มีค่าใช้จ่าย</span><span>ไม่มีข้อผูกมัด</span><span>ติดต่อกลับภายใน 1 วันทำการ</span></div>
+    <div class="form-card">
+      <div id="formBox">
+        
+        <form id="leadForm" novalidate>
+          <input type="hidden" name="source" value="lp-retire">
+          <div class="hp" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="row">
+            <div class="field">
+              <label for="name">ชื่อ-นามสกุล <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="เช่น สมชาย ใจดี">
+              <div class="err">กรุณากรอกชื่อ-นามสกุล</div>
+            </div>
+            <div class="field">
+              <label for="nickname">ชื่อเล่น</label>
+              <input type="text" id="nickname" name="nickname" autocomplete="nickname" placeholder="ให้เราเรียกคุณว่า…">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="phone">เบอร์โทรศัพท์ <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="08X-XXX-XXXX">
+              <div class="err">กรุณากรอกเบอร์มือถือ 10 หลัก</div>
+            </div>
+            <div class="field">
+              <label for="line">LINE ID</label>
+              <input type="text" id="line" name="line" placeholder="ถ้าสะดวกให้ติดต่อทาง LINE">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="age">ช่วงอายุ</label>
+              <select id="age" name="age">
+                <option value="">เลือกช่วงอายุ</option>
+                <option value="under25">ต่ำกว่า 25 ปี</option>
+                <option value="25-34">25–34 ปี</option>
+                <option value="35-44">35–44 ปี</option>
+                <option value="45-54">45–54 ปี</option>
+                <option value="55plus">55 ปีขึ้นไป</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="income">รายได้ต่อเดือน (โดยประมาณ)</label>
+              <select id="income" name="income">
+                <option value="">เลือกช่วงรายได้</option>
+                <option value="lt30k">ต่ำกว่า 30,000 บาท</option>
+                <option value="30-50k">30,000–50,000 บาท</option>
+                <option value="50-100k">50,000–100,000 บาท</option>
+                <option value="100-200k">100,000–200,000 บาท</option>
+                <option value="gt200k">มากกว่า 200,000 บาท</option>
+                <option value="prefer_not">ไม่ระบุ</option>
+              </select>
+              <div class="hint">ใช้ประเมินว่าเก็บได้เดือนละเท่าไหร่ เลือก 'ไม่ระบุ' ได้</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="goal">เป้าหมายหลักที่ต้องการวางแผน <span class="req">*</span></label>
+            <select id="goal" name="goal" required>
+              <option value="">เลือกเป้าหมาย</option>
+              <option value="แผนป้องกันความเสี่ยง / ประกัน">แผนป้องกันความเสี่ยง / ประกัน</option><option value="แผนการลงทุน">แผนการลงทุน</option><option value="แผนวัยเกษียณ" selected>แผนวัยเกษียณ</option><option value="แผนภาษี">แผนภาษี</option><option value="แผนการศึกษาบุตร">แผนการศึกษาบุตร</option><option value="แผนบริหารหนี้สิน">แผนบริหารหนี้สิน</option><option value="แผนเป้าหมายระยะสั้น (บ้าน / รถ / แต่งงาน)">แผนเป้าหมายระยะสั้น (บ้าน / รถ / แต่งงาน)</option><option value="แผนส่งต่อมรดก">แผนส่งต่อมรดก</option><option value="วางแผนแบบองค์รวมทุกด้าน">วางแผนแบบองค์รวมทุกด้าน</option>
+            </select>
+            <div class="err">กรุณาเลือกเป้าหมาย</div>
+          </div>
+          <div class="field">
+            <label>ช่องทางและเวลาที่สะดวก</label>
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="method" value="face-to-face"> พบตัว (กทม.)</label>
+              <label class="check"><input type="checkbox" name="method" value="online"> Online Meeting</label>
+              <label class="check"><input type="checkbox" name="method" value="weekday"> จันทร์–ศุกร์</label>
+              <label class="check"><input type="checkbox" name="method" value="weekend"> เสาร์–อาทิตย์</label>
+            </div>
+          </div>
+          <button type="submit" class="submit" id="submitBtn">คำนวณอายุเกษียณของฉัน →</button>
+          <p class="privacy">ข้อมูลของคุณใช้เพื่อติดต่อนัดหมายเท่านั้น ไม่ส่งต่อให้บุคคลภายนอก · ไม่มีการโทรขายซ้ำ · <a href="../privacy/" target="_blank" rel="noopener" style="color:var(--purple)">นโยบายความเป็นส่วนตัว</a></p>
+        </form>
+      </div>
+      <div class="done" id="doneBox">
+        <div class="tick">✅</div>
+        <h3>ได้รับข้อมูลแล้ว ขอบคุณครับ</h3>
+        <p>ทีมงานจะโทรหาคุณภายใน 1 วันทำการ เพื่อนัดเวลาที่สะดวก</p>
+        <div class="next">
+          <b>ระหว่างรอ — เตรียมไว้จะคุยได้ลึกขึ้น</b>
+          รายจ่ายต่อเดือนโดยประมาณ · ยอดกองทุนสำรองเลี้ยงชีพ / RMF / พอร์ตที่มีตอนนี้ · อายุที่อยากหยุดทำงาน
+        </div>
+        <a class="btn-line" href="https://line.me/R/ti/p/@283emahl" target="_blank" rel="noopener">เพิ่มเพื่อน LINE @imoneypartner →</a>
+        <p style="font-size:12.5px;margin-top:8px">นัดเวลาและส่งเอกสารทาง LINE ได้เร็วกว่า</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advisors">
+  <div class="wrap">
+    <div class="sec-label">Your Advisors</div>
+    <h2>คนที่จะคุยกับคุณ</h2>
+    <div class="adv"><div class="adv-photo"><img src="../assets/phak.webp" alt="Phak Rujirakamort" width="124" height="135" loading="lazy" decoding="async"></div><div class="adv-body"><div class="adv-name">Phak Rujirakamort</div><div class="adv-role">CFA Charterholder</div><div class="adv-title">Co-Founder &amp; Wealth Manager · iMoneyPartner &amp; W Advisory</div><div class="adv-tags"><span class="adv-tag">CFA Charterholder</span><span class="adv-tag">MDRT 2021–2026</span><span class="adv-tag">COT 2025</span><span class="adv-tag">IC Complex 1</span></div></div></div><div class="adv"><div class="adv-photo"><img src="../assets/kanokwan.webp" alt="Kanokwan Chalalaiwiwat" width="124" height="135" loading="lazy" decoding="async"></div><div class="adv-body"><div class="adv-name">Kanokwan Chalalaiwiwat</div><div class="adv-role">IP License (Investment Planner)</div><div class="adv-title">Co-Founder &amp; Wealth Manager · iMoneyPartner</div><div class="adv-tags"><span class="adv-tag">IP License</span><span class="adv-tag">MDRT 2021–2026</span><span class="adv-tag">AIA Convention 2022–2026</span><span class="adv-tag">FA Prime #56</span></div></div></div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="sec-label">Case Example</div>
+    <h2>ตัวอย่างการวางแผนเกษียณ</h2>
+    <div class="case-grid"><div class="case"><div class="who">พนักงานบริษัท อายุ 35 · ตั้งเป้าเกษียณ 60</div><div class="before">เก็บเงินอยู่แต่ไม่รู้ว่าพอไหม มีกองทุนสำรองเลี้ยงชีพกับ RMF บ้าง</div><div class="after">คำนวณได้ว่าต้องมี <b>฿21.98M</b> ณ อายุ 60 — วางแผนสะสมต่อเดือนให้ถึงเป้า พร้อมสมมติฐานเงินเฟ้อและผลตอบแทนที่ปรับดูได้</div></div><div class="case"><div class="who">คู่สามีภรรยา อายุ 38 · อยากหยุดงานประจำที่ 50</div><div class="before">รายได้รวม 180,000/เดือน มีพอร์ตอยู่ 3.8M แต่ไม่รู้ว่าพอสำหรับอีก 35 ปีหลังหยุดงานไหม</div><div class="after">ได้ตัวเลขเป้า + <b>ยอดที่ต้องลงทุนเพิ่ม/เดือน</b> และแผนถอนเงินหลังเกษียณที่ยืดเงินให้อยู่ถึงอายุ 85</div></div></div>
+    <p class="fit-not" style="margin-top:14px">ตัวเลขข้างต้นมาจากเคสสาธิตในระบบวางแผน iMoneyPlan ไม่ใช่ข้อมูลลูกค้าจริง — แผนของคุณจะคำนวณจากตัวเลขของคุณเอง</p>
+    <div class="sec-label" style="margin-top:44px">Client Reviews</div>
+    <h2>ลูกค้าพูดถึงเรา</h2>
+    <div class="rev-grid"><div class="rev"><div class="stars">★★★★★</div><p>"แผนวางเกษียณที่ได้รับ ทำให้รู้สึกมั่นใจขึ้นมากว่าจะมีอนาคตที่มั่นคง ดีใจที่มาปรึกษาตั้งแต่ตอนนี้"</p><div class="who"><div class="av">น</div><div><b>คุณนภา</b><span>เจ้าของธุรกิจ อายุ 38 ปี</span></div></div></div><div class="rev"><div class="stars">★★★★★</div><p>"ไม่คิดว่าวางแผนการเงินจะสนุกขนาดนี้ ที่ปรึกษาอธิบายได้ชัดมาก ทำให้เข้าใจเรื่องที่เคยคิดว่ายากได้ง่ายขึ้นมาก"</p><div class="who"><div class="av">พ</div><div><b>คุณพีร์</b><span>พนักงานบริษัท อายุ 32 ปี</span></div></div></div><div class="rev"><div class="stars">★★★★★</div><p>"ก่อนหน้านี้ไม่รู้จะเริ่มออมยังไง หลังจากวางแผนแล้วมีทิศทางชัดเจน ที่ปรึกษา follow up ดีมากค่ะ"</p><div class="who"><div class="av">ส</div><div><b>คุณสุดา</b><span>มนุษย์เงินเดือน อายุ 28 ปี</span></div></div></div></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-label">FAQ</div>
+    <h2>คำถามที่ถูกถามบ่อย</h2>
+    <details><summary>ฟรีจริงไหม มีค่าใช้จ่ายแอบแฝงหรือเปล่า</summary><div class="a">การนัดคุยและแผนเบื้องต้นไม่มีค่าใช้จ่ายและไม่มีข้อผูกมัด เราได้รับค่าตอบแทนจากสถาบันการเงินเมื่อคุณเลือกใช้ผลิตภัณฑ์ผ่านเรา — คุณจึงไม่ต้องจ่ายค่าที่ปรึกษา และจะได้แผนกลับไปไม่ว่าจะตัดสินใจอย่างไร</div></details><details><summary>จะโดนขายประกันหรือกองทุนไหม</summary><div class="a">เราจะไม่เสนอผลิตภัณฑ์ใด ๆ ก่อนที่คุณจะเห็นภาพรวมแผนของตัวเองและเข้าใจว่าทำไมถึงต้องใช้เครื่องมือนั้น ทุกการตัดสินใจเป็นของคุณ และไม่มีการโทรตามขายซ้ำ</div></details><details><summary>นัดคุยใช้เวลานานแค่ไหน ที่ไหน</summary><div class="a">นัดแรกประมาณ 45–60 นาที เลือกได้ทั้ง Online Meeting หรือพบตัวในกรุงเทพฯ วันธรรมดาหรือเสาร์–อาทิตย์ก็ได้</div></details><details><summary>อายุ 40 กว่าแล้ว เริ่มตอนนี้ยังทันไหม</summary><div class="a">ทัน — เพียงแต่ตัวเลขที่ต้องเก็บต่อเดือนจะสูงกว่าคนที่เริ่มเร็ว การรู้ตัวเลขจริงตั้งแต่วันนี้ดีกว่าเดาไปอีก 10 ปี</div></details><details><summary>FIRE ต้องมีเงินเท่าไหร่</summary><div class="a">หลักคิดเบื้องต้นคือ 25 เท่าของรายจ่ายต่อปี แต่ตัวเลขจริงขึ้นกับอายุที่หยุดงาน เงินเฟ้อ ค่ารักษาพยาบาล และผลตอบแทน — เราคำนวณให้เป็นตัวเลขของคุณเอง</div></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>รู้ตัวเลขวันนี้ ดีกว่าเดาไปอีก 10 ปี</h2>
+    <p>ขอคำนวณตัวเลขเกษียณของคุณ ใช้เวลากรอก 1 นาที ไม่มีค่าใช้จ่าย</p>
+    <a class="btn-gold" href="#form">คำนวณอายุเกษียณของฉัน →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="../im-mark-white.png" class="footer-mark" alt="iMoney Partner" width="30" height="30">
+    <p><strong style="color:var(--gold-soft)">iMoney Partner</strong> · ที่ปรึกษาการเงินอิสระ</p>
+    <p>ติดต่อ <a href="mailto:imoneypartnerth@gmail.com">imoneypartnerth@gmail.com</a></p>
+    <nav>
+      <a href="../">วางแผนรวม</a>
+      <a href="../tax/">ลดหย่อนภาษี</a>
+      <a href="../retire/">วางแผนเกษียณ</a>
+      <a href="../invest/">ลงทุนเงินก้อน</a>
+      <a href="../privacy/" target="_blank" rel="noopener">นโยบายความเป็นส่วนตัว</a>
+    </nav>
+    <p class="lic">ให้บริการโดย ภาคย์ รุจิรกาโมทย์ — ตัวแทนประกันชีวิต ใบอนุญาต คปภ. เลขที่ 6201085314 · ผู้แนะนำการลงทุน (IC) ก.ล.ต. เลขที่ 109941<br>
+    การลงทุนมีความเสี่ยง ผู้ลงทุนควรศึกษาข้อมูลก่อนตัดสินใจลงทุน · ผลการดำเนินงานในอดีตไม่ได้เป็นสิ่งยืนยันถึงผลในอนาคต<br>
+    © 2026 iMoney Partner · <a href="https://imoneypartner.com">www.imoneypartner.com</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a href="#form">คำนวณอายุเกษียณของฉัน →</a></div>
+
+<script>
+(function(){
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbwS5GP9YuVRswf_v8vSBYC7Hs_2JnUo3J7D2iJs6UyFd_6cWL-W4j54zIUM_qTlgYvc/exec";
+  var form = document.getElementById('leadForm');
+  var btn  = document.getElementById('submitBtn');
+  var T0   = Date.now();
+  var gclid = (new URLSearchParams(location.search)).get('gclid') || '';
+  try { if (gclid) sessionStorage.setItem('gclid', gclid); else gclid = sessionStorage.getItem('gclid') || ''; } catch (e) {}
+
+  var sticky = document.getElementById('sticky');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ sticky.style.display = en[0].isIntersecting ? 'none' : ''; },
+      {threshold:0.15}).observe(document.getElementById('form'));
+  }
+
+  form.querySelectorAll('input,select').forEach(function(el){
+    el.addEventListener('input', function(){ el.closest('.field').classList.remove('invalid'); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name  = form.name.value.trim();
+    var phone = form.phone.value.trim();
+    var goal  = form.goal.value;
+    if(form.website.value || (Date.now() - T0) < 3000){ document.getElementById('formBox').style.display='none'; document.getElementById('doneBox').style.display='block'; return; }
+    var digits = phone.replace(/[^0-9]/g,'');
+    var ok = true;
+    function mark(el, bad){ var f = el.closest('.field'); if(bad){ f.classList.add('invalid'); if(ok){ el.focus(); ok = false; } } else f.classList.remove('invalid'); }
+    mark(form.name, !name);
+    mark(form.phone, !(/^0[0-9]{8,9}$/.test(digits) || /^66[0-9]{8,9}$/.test(digits)));
+    mark(form.goal, !goal);
+    if(!ok) return;
+
+    btn.disabled = true;
+    btn.textContent = 'กำลังส่ง...';
+
+    var fd = new FormData(form);
+    var methods = fd.getAll('method');
+    var params = new URLSearchParams();
+    fd.forEach(function(v,k){ if(k!=='method' && k!=='website') params.append(k,v); });
+    params.append('method', methods.join(', '));
+    params.append('page', location.pathname);
+    params.append('gclid', gclid);
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+      body: params.toString()
+    }).catch(function(){}).then(function(){
+      document.getElementById('formBox').style.display = 'none';
+      var d = document.getElementById('doneBox');
+      d.style.display = 'block';
+      sticky.style.display = 'none';
+      d.scrollIntoView({behavior:'smooth', block:'center'});
+      if (window.gtag) { gtag('event','conversion',{'send_to':'AW-11371234695/_Kr0CNik0rgcEleLna4q'}); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
